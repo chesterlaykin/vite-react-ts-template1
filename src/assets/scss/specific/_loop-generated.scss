@@ -1,0 +1,36 @@
+/*
+
+	---Loop generated classes---
+
+	Using "@each", creates several variants of each rule
+
+*/
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+  
+$quarterWidths: (25,50,75,100);
+  
+@each $breakpointName, $breakpointMinWidth in $grid-breakpoints { 
+  
+    @media (min-width: $breakpointMinWidth) {
+
+        @if $breakpointName == 'xs' {
+
+        } @else {
+
+            //Single values
+
+        }
+      
+    }
+ 
+}
+
+
+ 	
+ 

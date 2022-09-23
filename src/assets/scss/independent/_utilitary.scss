@@ -1,0 +1,36 @@
+/*
+	Contents
+	
+	- One attribute per selector
+	- Two or more properties per rule
+
+*/
+
+
+/* =============== One attribute classes ===============
+	Each selector does one thing.
+	The name is a shortened version of the selector
+*/
+ 
+.flex {
+	display: flex;
+}
+.pointer{
+	cursor:pointer;
+}
+.align-center {
+	align-items: center;
+}
+.justify-end {
+	justify-content: end;
+}
+ 	
+ /* =============== Two or more properties per rule ===============
+*/
+.flex-center {
+	align-items: center;
+	justify-content: center;
+}
+.flex-1 {
+	flex: 1 0 0%;
+}

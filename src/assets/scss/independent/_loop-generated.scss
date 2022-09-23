@@ -1,0 +1,108 @@
+/*
+
+	---Loop generated classes---
+
+	Using "@each", creates several variants of each rule
+
+*/
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+) !default;
+
+// $grid-breakpoints: (
+//   xs: 0,
+//   sm: 576,
+//   md: 768,
+//   lg: 992,
+//   xl: 1200
+// ) !default;
+  
+$quarterWidths: (25,50,75,100);
+
+//Classes for min-width (breakpoint)
+@each $name, $minWidth in $grid-breakpoints { 
+    // $minWidth: calc(#{$minWidth} -1) + 'px';
+
+    // @media (min-width: ($minWidth + 'px')) {
+    @media (min-width: $minWidth) {
+
+        @if $name == 'xs' {
+            .bg-#{$name} {
+                background: green;
+            }
+            .flex-nowrap{
+                flex-wrap: nowrap;
+            }
+            .ws-nowrap{
+                white-space: nowrap;
+            }
+        } @else {
+
+            .d-block-#{$name} {
+                display:block !important;
+            } 
+            .d-none-#{$name} {
+                display:none !important;
+            } 
+            .flex-1-#{$name} {
+                flex: 1 0 0%;
+            } 
+            .flex-nowrap-#{$name} {
+                flex-wrap: nowrap;
+            } 
+            .ws-nowrap-#{$name} {
+                white-space: nowrap;
+            }
+        }
+      
+    }
+
+    @each $quarterWidth in $quarterWidths{	
+ 
+        /* Classes for min-width at different screen widths
+        Example:  .mw-md-25         //<-- 'md'-size and upwards         */
+        
+        @media (min-width: $minWidth) {
+            .mw-#{$name}-#{$quarterWidth} { 						 
+                min-width: $quarterWidth * 1%;
+            }
+        }
+    }
+ 
+}
+
+// //Classes for both min-width {breakpoint} and spans between breakpoints
+// @mixin generateResponsiveClasses(){ 
+//     @for $i from 1 through length( $grid-breakpoints) {
+//         $keys: map-keys( $grid-breakpoints);
+//         $values: map-values( $grid-breakpoints);
+
+//         $name: nth($keys, $i);
+//         $minWidth: nth($values, $i);
+//         $breakpointMaxWidth: nth($values, $i+1);
+
+//         @media (min-width: $minWidth) {
+        
+//         }
+//         // ... do something fancy with $c
+//     }
+// }
+// @include generateResponsiveClasses();
+
+// @each( $name, $minWidth in $grid-breakpoints) {
+
+   
+//     //From breakpoint to the next breakpoint
+//     @media (min-width: $minWidth) and (max-width: $minWidth) {
+
+//     }
+// }
+
+
+
+ 	
+ 

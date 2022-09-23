@@ -1,0 +1,3 @@
+@mixin sm-max {
+    @media (max-width: $sm-max) { @content; }
+}

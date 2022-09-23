@@ -1,0 +1,11 @@
+/*
+style-resources-module (see nuxt.config)
+
+Only import variables, mixins, functions 
+Do not import actual styles. 
+
+*/
+
+@import '../specific/breakpoints.scss';
+@import '../specific/variables.scss';
+@import '../independent/mixins.scss';
