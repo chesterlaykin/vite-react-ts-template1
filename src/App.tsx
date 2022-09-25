@@ -1,23 +1,29 @@
 import { useState } from "react";
+import { Link, Route, Routes } from "react-router-dom";
 import "./App.css";
+import { About } from "@/pages/About";
+import { Home } from "@/pages/Home";
+import { Thing } from "@/pages/Thing";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState<number>(0);
+  const [thing, setThings] = useState<any[]>([]);
+  const [links, setLinks] = useState([
+    {url: '/', title: 'Home'},
+    {url: '/About', title: 'About'},
+    {url: '/thing', title: 'Thing'},
+  ]);
 
   return (
     <>
-      <div className="App" >
-        <div></div>
-        <h1>Vite-react-ts-template1</h1>
-        <div className="card">
-          <button onClick={() => setCount((count) => count + 1)}>
-            count is {count}
-          </button>
-          <p>
-            Edit <code>src/App.tsx</code> and save to test HMR
-          </p>
-        </div>
-      </div>
+    <nav className="ul">
+      {links.map( link => <li><Link to={link.url}>{link.title}</Link></li>)}
+    </nav>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/thing" element={<Thing />} />
+      </Routes>
     </>
   );
 }

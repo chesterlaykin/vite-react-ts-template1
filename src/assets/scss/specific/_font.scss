@@ -1,0 +1,26 @@
+@font-face {
+    font-family: 'yanonekaffeesatz';
+    src: url('./YanoneKaffeesatz-Medium.woff') format('woff');
+    font-weight: 400;
+  }
+  
+  :root {
+    --font-family-1: 'yanonekaffeesatz', "Courier New", "Arial Narrow", system-ui, -apple-system;
+  }
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--font-family-1);
+    font-weight: 400;
+  }
+  
+  p,
+  a {
+    font-family: 'yanonekaffeesatz';
+    font-weight: 400;
+  }
+  
